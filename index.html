@@ -29,13 +29,10 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;letter-spacing:-.02em}
-
 nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
 nav .links{display:flex;gap:22px;align-items:center;font-weight:500}
 nav a{text-decoration:none}
 nav a:hover{color:var(--accent)}
-
-/* hero: a grid that lights up under the pointer */
 .hero{position:relative;padding:72px 0 96px;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;
   background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
@@ -50,8 +47,6 @@ nav a:hover{color:var(--accent)}
 .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:500;text-decoration:none;border:1.5px solid var(--ink)}
 .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 .btn:hover{transform:translateY(-2px)}
-
-
 .btn{transition:transform .2s ease,background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease}
 .btn:active{transform:translateY(0) scale(.98)}
 .dl{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px}
@@ -67,7 +62,6 @@ nav a:hover{color:var(--accent)}
 @media(prefers-reduced-motion:reduce){.dl .arrow{animation:none}.dl::after{display:none}.btn:active{transform:none}}
 section{padding:72px 0;border-top:1.5px solid var(--line)}
 section>.wrap>h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:36px}
-
 .projects{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{background:var(--surface);border:1.5px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
 .thumb{aspect-ratio:16/9;background:var(--ink);display:grid;place-items:center;color:var(--bg);font:800 1.1rem "Bricolage Grotesque",sans-serif}
@@ -80,8 +74,6 @@ section>.wrap>h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:36px}
 .tags span{font-size:13px;border:1.5px solid var(--line);border-radius:999px;padding:2px 10px}
 .card a.more{font-weight:500;color:var(--accent);text-decoration:none}
 .card a.more:hover{text-decoration:underline}
-
-
 .timeline{list-style:none;padding:0;border-left:2px solid var(--line);margin-left:6px}
 .timeline li{display:grid;gap:4px 28px;padding:0 0 36px 24px;position:relative}
 .timeline li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
@@ -99,7 +91,6 @@ section>.wrap>h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:36px}
 .skills{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .skills h3{font-size:1.2rem;margin-bottom:8px}
 .skills p{color:var(--muted)}
-
 .about{display:grid;gap:40px;grid-template-columns:1fr;align-items:start}
 @media(min-width:760px){.about{grid-template-columns:2fr 1fr}}
 .about p+p{margin-top:16px}
@@ -107,19 +98,16 @@ section>.wrap>h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:36px}
 .facts li{padding:8px 0;border-bottom:1px solid var(--line)}
 .facts li:last-child{border:0}
 .facts b{display:block;font-size:14px;color:var(--muted);font-weight:500}
-
 .contact h2{margin-bottom:16px}
 .contact a.big{font:800 clamp(1.6rem,5vw,3rem) "Bricolage Grotesque",sans-serif;text-decoration:none;color:var(--accent);word-break:break-all}
 .contact a.big:hover{text-decoration:underline}
 .social{display:flex;gap:20px;margin-top:24px;flex-wrap:wrap}
 footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid var(--line)}
-
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
 </style>
 </head>
 <body>
 <canvas id="bg" aria-hidden="true"></canvas>
-
 <header class="wrap">
   <nav aria-label="Main">
     <a href="#top" style="font-weight:500">HS</a>
@@ -131,7 +119,6 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
     </div>
   </nav>
 </header>
-
 <main id="top">
   <div class="hero" id="hero">
     <div class="wrap">
@@ -141,13 +128,12 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
       <div class="cta">
         <a class="btn primary" href="#experience">See my experience</a>
         <a class="btn dl" id="dl" href="resume-HamdoonShafieen.pdf" download="resume-HamdoonShafieen.pdf">
-          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/></svg>
+          <svg class="arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"></path><path d="m7 11 5 5 5-5"></path><path d="M5 20h14"></path></svg>
           <span class="label">Download resume (PDF)</span>
         </a>
       </div>
     </div>
   </div>
-
   <section id="experience">
     <div class="wrap">
       <h2>Experience</h2>
@@ -168,7 +154,6 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
       </ol>
     </div>
   </section>
-
   <section id="skills">
     <div class="wrap">
       <h2>Skills</h2>
@@ -182,7 +167,6 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
       </div>
     </div>
   </section>
-
   <section id="about">
     <div class="wrap">
       <h2>About</h2>
@@ -199,7 +183,6 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
       </div>
     </div>
   </section>
-
   <section class="contact" id="contact">
     <div class="wrap">
       <h2>Let's talk</h2>
@@ -208,15 +191,13 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
     </div>
   </section>
 </main>
-
 <footer>
   <div class="wrap">© <span id="yr"></span> Hamdoon Shafieen</div>
 </footer>
-
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  // grid glow follows the pointer in the hero
+  // Grid glow follows the pointer in the hero.
   var hero = document.getElementById('hero');
   hero.addEventListener('pointermove', function(e){
     var r = hero.getBoundingClientRect();
@@ -224,7 +205,7 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
     hero.style.setProperty('--y', (e.clientY - r.top) + 'px');
   });
 
-  // ambient background: slow drifting pixels and rings, nudged by pointer or touch
+  // Ambient background: slow drifting pixels and rings, nudged by pointer or touch.
   (function(){
     var c = document.getElementById('bg'), ctx = c.getContext('2d');
     var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -248,13 +229,36 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
         ox: 0, oy: 0
       };
     }
+    function particleCount(){
+      return Math.min(60, Math.max(1, Math.round(w*h/(w < 700 ? 22000 : 30000))));
+    }
     function resize(){
+      var oldW = w;
       dpr = Math.min(window.devicePixelRatio || 1, 2);
-      w = innerWidth; h = innerHeight;
-      c.width = w*dpr; c.height = h*dpr;
+      w = window.innerWidth;
+      h = window.innerHeight;
+      c.width = Math.round(w*dpr);
+      c.height = Math.round(h*dpr);
       ctx.setTransform(dpr,0,0,dpr,0,0);
-      var n = Math.min(60, Math.round(w*h/(w < 700 ? 22000 : 30000)));
-      parts = []; for (var i=0;i<n;i++) parts.push(make());
+
+      if (parts.length === 0){
+        var initialCount = particleCount();
+        for (var i=0;i<initialCount;i++) parts.push(make());
+      } else if (oldW !== w){
+        // A width change (for example, rotating the device) can reflow x positions.
+        // Height-only changes from mobile browser chrome leave existing particles alone.
+        var scaleX = w / oldW;
+        for (var j=0;j<parts.length;j++) parts[j].x *= scaleX;
+
+        var targetCount = particleCount();
+        while (parts.length < targetCount){
+          var p = make();
+          p.y = h + 20; // Let new particles drift in instead of popping into view.
+          parts.push(p);
+        }
+        if (parts.length > targetCount) parts.length = targetCount;
+      }
+
       colors();
       if (reduce) draw();
     }
@@ -304,7 +308,7 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
     resize(); start();
   })();
 
-  // resume button: brief confirmation after click
+  // Resume button: brief confirmation after click.
   (function(){
     var b = document.getElementById('dl'), t = b.querySelector('.label'), id;
     b.addEventListener('click', function(){
