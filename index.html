@@ -74,6 +74,9 @@ section>.wrap>h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:36px}
 .tags span{font-size:13px;border:1.5px solid var(--line);border-radius:999px;padding:2px 10px}
 .card a.more{font-weight:500;color:var(--accent);text-decoration:none}
 .card a.more:hover{text-decoration:underline}
+.exp-total{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin:-12px 0 36px;padding:18px 22px;background:var(--surface);border:1.5px solid var(--line);border-radius:14px}
+.exp-total .big{font:800 clamp(1.5rem,4vw,2.2rem) "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em;color:var(--accent)}
+.exp-total .sub{color:var(--muted);font-size:15px}
 .timeline{list-style:none;padding:0;border-left:2px solid var(--line);margin-left:6px}
 .timeline li{display:grid;gap:4px 28px;padding:0 0 36px 24px;position:relative}
 .timeline li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
@@ -137,9 +140,15 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
   <section id="experience">
     <div class="wrap">
       <h2>Experience</h2>
+      <div class="exp-total" aria-live="off">
+        <span class="big" id="exp-ymd">Since January 2021</span>
+        <span class="sub" id="exp-days"></span>
+      </div>
       <ol class="timeline">
-        <li><div class="when">June 2025 – Present</div><div><h3>ZJ Games <small>Remote</small></h3></div></li>
-        <li><div class="when">Jan 2025 – May 2025</div><div><h3>IBM Games <small>Islamabad</small></h3></div></li>
+        <li><div class="when">June 2025 – Present</div><div><h3>ZJ Games <small>Remote</small></h3>
+          <p>Worked on multiple PC and mobile games as required by the client.</p></div></li>
+        <li><div class="when">Jan 2025 – May 2025</div><div><h3>IBM Games <small>Islamabad</small></h3>
+          <div class="tags"><span>Offroad Driving Game</span></div></div></li>
         <li><div class="when">Aug 2023 – Dec 2024</div><div><h3>Pixelspark Studios <small>Lahore</small></h3>
           <p>Worked on multiple projects.</p>
           <div class="tags"><span>Multiplayer Chess</span><span>Multiplayer Checkers</span><span>Multiplayer Backgammon</span><span>AR Furniture Placement App</span><span>3D Hypercasual Car Drift Game</span></div></div></li>
@@ -196,6 +205,24 @@ footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1.5px solid v
 </footer>
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Experience counter: time elapsed since January 1, 2021.
+  (function(){
+    var start = new Date(2021, 0, 1), now = new Date();
+    var y = now.getFullYear() - start.getFullYear();
+    var m = now.getMonth() - start.getMonth();
+    var d = now.getDate() - start.getDate();
+    if (d < 0){
+      m--;
+      d += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); // days in previous month
+    }
+    if (m < 0){ y--; m += 12; }
+    var totalDays = Math.round((Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) -
+                                Date.UTC(2021, 0, 1)) / 86400000);
+    function u(n, word){ return n + ' ' + word + (n === 1 ? '' : 's'); }
+    document.getElementById('exp-ymd').textContent = u(y,'year') + ', ' + u(m,'month') + ', ' + u(d,'day');
+    document.getElementById('exp-days').textContent = totalDays.toLocaleString('en-US') + ' days of experience';
+  })();
 
   // Grid glow follows the pointer in the hero.
   var hero = document.getElementById('hero');
